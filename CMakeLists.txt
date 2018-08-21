@@ -776,6 +776,32 @@ ADD_LIBRARY( parasail ${LIB_TYPE}
     ${maybe_def}
 )
 
+ADD_LIBRARY( parasail_static STATIC
+    $<TARGET_OBJECTS:parasail_core>
+    $<TARGET_OBJECTS:parasail_novec>
+    $<TARGET_OBJECTS:parasail_novec_table>
+    $<TARGET_OBJECTS:parasail_novec_rowcol>
+    $<TARGET_OBJECTS:parasail_novec_trace>
+    $<TARGET_OBJECTS:parasail_sse2>
+    $<TARGET_OBJECTS:parasail_sse2_table>
+    $<TARGET_OBJECTS:parasail_sse2_rowcol>
+    $<TARGET_OBJECTS:parasail_sse2_trace>
+    $<TARGET_OBJECTS:parasail_sse41>
+    $<TARGET_OBJECTS:parasail_sse41_table>
+    $<TARGET_OBJECTS:parasail_sse41_rowcol>
+    $<TARGET_OBJECTS:parasail_sse41_trace>
+    $<TARGET_OBJECTS:parasail_avx2>
+    $<TARGET_OBJECTS:parasail_avx2_table>
+    $<TARGET_OBJECTS:parasail_avx2_rowcol>
+    $<TARGET_OBJECTS:parasail_avx2_trace>
+    $<TARGET_OBJECTS:parasail_altivec>
+    $<TARGET_OBJECTS:parasail_altivec_table>
+    $<TARGET_OBJECTS:parasail_altivec_rowcol>
+    $<TARGET_OBJECTS:parasail_altivec_trace>
+    ${maybe_def}
+)
+
+
 TARGET_INCLUDE_DIRECTORIES(parasail PUBLIC ${CMAKE_CURRENT_LIST_DIR})
 
 IF( ZLIB_FOUND )
